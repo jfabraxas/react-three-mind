@@ -1,4 +1,5 @@
 'use client';
+import type from '@react-three/fiber'
 
 import { ARFaceMesh, ARView } from "react-three-mind";
 

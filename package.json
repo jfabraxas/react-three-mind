@@ -32,7 +32,7 @@
   ],
   "scripts": {
     "dev": "pnpm --filter nextjs dev",
-    "build": "vite build"
+    "build": "pnpm --filter nextjs dev"
   },
   "devDependencies": {
     "@babel/core": "^7.22.8",
