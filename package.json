@@ -32,13 +32,16 @@
   ],
   "scripts": {
     "dev": "pnpm --filter nextjs dev",
-    "build": "vite build"
+    "build": "pnpm --filter nextjs build",
+    "clean": "rm -rf node_modules"
   },
   "devDependencies": {
     "@babel/core": "^7.22.8",
     "@babel/preset-env": "^7.22.7",
     "@babel/preset-react": "^7.22.5",
     "@rollup/plugin-terser": "^0.4.3",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
     "@vitejs/plugin-react": "^4.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -52,6 +55,25 @@
     "mind-ar": "1.2.3",
     "nopt": "^8.1.0",
     "react-webcam": "^7.1.1",
-    "three": "^0.166.0"
+    "three": "^0.166.0",
+    "three-mesh-bvh": "^0.7.8"
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "@types/react",
+        "@types/react-dom"
+      ],
+      "allowedVersions": {
+        "three": ">=0.145.0 <1.0.0",
+        "react": "^18.0.0",
+        "react-dom": "^18.0.0"
+      }
+    },
+    "overrides": {
+      "three-mesh-bvh": {
+        "three": "$three"
+      }
+    }
   }
 }
